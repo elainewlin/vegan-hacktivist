@@ -19,5 +19,5 @@ Route::get('/', [QuestionController::class, 'create']);
 Route::post('/question', [QuestionController::class, 'store']);
 
 // TODO: question ID
-Route::get('/question', [AnswerController::class, 'create']);
-Route::post('/question', [AnswerController::class, 'store']);
+Route::get('/question/details', [AnswerController::class, 'create']);
+Route::post('/answer', [AnswerController::class, 'store']);
