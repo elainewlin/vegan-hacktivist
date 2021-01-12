@@ -10,9 +10,31 @@
   <body>
     <div class="container">
       <h1>Q/A</h1>
-      <textarea name="question" placeholder="What's your favorite color?" class="form-control">
-
-      </textarea>
+      <form>
+        <div class="form-group">
+          <textarea name="question" placeholder="What's your favorite color?" class="form-control">
+          </textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary">Ask away</button>
+        </div>
+      </form>
+      <hr/>
+      <h1>Questions</h1>
+      <table class="table">
+        <tr>
+          <td>Some question 1?</td>
+          <td>
+            <button type="button" class="btn btn-info btn-sm">1 answers</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Some question 2?</td>
+          <td>
+            <button type="button" class="btn btn-info btn-sm">2 answers</button>
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
