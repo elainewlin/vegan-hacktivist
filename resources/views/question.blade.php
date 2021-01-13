@@ -11,9 +11,10 @@
   </head>
   <body>
     <div class="container">
-      <h1>Some question 1?</h1>
-      <p>Some answer 1</p>
-      <p>Some answer 2</p>
+      <h1>{{ $question }}</h1>
+      @foreach ($answers as $answer)
+        <p>{{ $answer }}</p>
+      @endforeach
       <hr/>
       <h1>Write an answer</h1>
       <form method="POST" action="/answer">

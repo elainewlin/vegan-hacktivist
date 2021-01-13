@@ -18,6 +18,5 @@ use App\Http\Controllers\AnswerController;
 Route::get('/', [QuestionController::class, 'create']);
 Route::post('/question', [QuestionController::class, 'store']);
 
-// TODO: question ID
-Route::get('/question/details', [AnswerController::class, 'create']);
+Route::get('/question/details/{id}', [AnswerController::class, 'create']);
 Route::post('/answer', [AnswerController::class, 'store']);

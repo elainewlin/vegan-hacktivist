@@ -1,3 +1,13 @@
 .container {
   margin-top: 24px;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
