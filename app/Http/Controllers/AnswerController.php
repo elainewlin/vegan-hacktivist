@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use \Datetime;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,17 +17,20 @@ class AnswerController extends Controller
      */
     public function create($id)
     {
-        $answerQuery = "select text from answers where question_id={$id} order by created_at asc";
-        // $answers = DB::select($answerQuery);
+        $queryArr = [ "id" => $id ];
+        // $answers = DB::select("SELECT text FROM answers WHERE question_id=:id ORDER BY created_at ASC", $queryArr);
         $answers = array(
             "Some answer 1",
             "Some answer 2"
         );
 
-        $questionQuery = "select text from questions where question_id={$id}";
-        // $question = DB:select($questionQuery);
+        // $question = DB::select("SELECT text FROM questions WHERE question_id=:id", $queryArr);
         $question = "Some question?";
-        return view('question', ['answers' => $answers, 'question' => $question ]);
+        return view("question", [
+            "answers" => $answers,
+            "question" => $question,
+            "questionId" => $id
+        ]);
     }
 
     /**
@@ -36,6 +41,15 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        error_log($request->answer);
+        $date = new DateTime();
+        $createdAt = $date->getTimestamp();
+
+        $queryArr = [
+            "text" => $request->answer,
+            "createdAt" => $createdAt,
+            "questionId" => $request->questionId
+        ];
+        // DB::insert("INSERT INTO answers (text, created_at, question_id) VALUES (:text, :createdAt, :questionId)", $queryArr);
+        return redirect()->back();
     }
 }

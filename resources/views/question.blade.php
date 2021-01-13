@@ -22,6 +22,7 @@
         <div class="form-group">
           <textarea name="answer" class="form-control" id="answer"></textarea>
         </div>
+        <input name="questionId" value="{{ $questionId }}" class="hidden" />
         <div class="form-group">
           <button class="btn btn-primary" id="submitAnswer">Answer question</button>
         </div>
