@@ -8,7 +8,7 @@ use App\Http\Controllers\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AnswerController extends Controller
+class QuestionDetailsController extends Controller
 {
     /**
      * Show the question details page.

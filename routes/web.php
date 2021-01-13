@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QuestionController;
-use App\Http\Controllers\AnswerController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\QuestionDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,8 @@ use App\Http\Controllers\AnswerController;
 |
 */
 
-Route::get('/', [QuestionController::class, 'create']);
-Route::post('/question', [QuestionController::class, 'store']);
+Route::get('/', [HomeController::class, 'create']);
+Route::post('/question', [HomeController::class, 'store']);
 
-Route::get('/question/details/{id}', [AnswerController::class, 'create']);
-Route::post('/answer', [AnswerController::class, 'store']);
+Route::get('/question/details/{id}', [QuestionDetailsController::class, 'create']);
+Route::post('/answer', [QuestionDetailsController::class, 'store']);

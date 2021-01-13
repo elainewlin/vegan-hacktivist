@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class QuestionController extends Controller
+class HomeController extends Controller
 {
     /**
      * Show the home page for submitting a question.
@@ -25,7 +25,6 @@ class QuestionController extends Controller
         $random = $randomQuestions[$randomIndex];
 
         $query = "SELECT text, id FROM questions ORDER BY created_at DESC";
-        error_log($query);
         // $questions = DB::select($query);
         $questions = array(
             array("Some question?", 1),
